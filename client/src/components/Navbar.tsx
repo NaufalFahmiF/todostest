@@ -28,7 +28,7 @@ export default function Navbar() {
             <Text fontSize={"lg"} fontWeight={500}>
               Daily Tasks
             </Text>
-            <Text fontSize={"lg"} fontWeight={500}>
+            <Text fontSize={"lg"} fontWeight={"bold"}>
               {currentTime}
             </Text>
           </Flex>
