@@ -3,12 +3,6 @@ module github.com/NaufalFahmiF/todostest
 go 1.20
 
 require (
-	github.com/gofiber/fiber/v2 v2.52.5
-	github.com/joho/godotenv v1.5.1
-	go.mongodb.org/mongo-driver v1.16.1
-)
-
-require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/uuid v1.5.0 // indirect
@@ -29,4 +23,7 @@ require (
 	golang.org/x/sync v0.7.0 // indirect
 	golang.org/x/sys v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
+	github.com/gofiber/fiber/v2 v2.52.5
+	github.com/joho/godotenv v1.5.1
+	go.mongodb.org/mongo-driver v1.16.1
 )
