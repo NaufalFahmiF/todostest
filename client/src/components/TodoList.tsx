@@ -36,7 +36,11 @@ const TodoList = () => {
 				fontWeight={"bold"}
 				textAlign={"center"}
 				my={2}
-				bgGradient='linear(to-l, #0b85f8, #00ffff)'
+				bgGradient={[
+					'linear(to-tr, teal.300, yellow.400)',
+					'linear(to-t, blue.200, teal.500)',
+					'linear(to-b, orange.100, purple.300)',
+				  ]}
 				bgClip='text'
 			>
 				Today's Tasks
@@ -49,7 +53,7 @@ const TodoList = () => {
 			{!isLoading && todos?.length === 0 && (
 				<Stack alignItems={"center"} gap='3'>
 					<Text fontSize={"xl"} textAlign={"center"} color={"gray.500"}>
-						All tasks completed! 🤞
+						All tasks completed   !!!
 					</Text>
 					<img src='/go.png' alt='Go logo' width={70} height={70} />
 				</Stack>

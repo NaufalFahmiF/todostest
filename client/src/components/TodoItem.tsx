@@ -57,7 +57,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
 				flex={1}
 				alignItems={"center"}
 				border={"1px"}
-				borderColor={"gray.600"}
+				borderColor={"gray.1000"}
 				p={2}
 				borderRadius={"lg"}
 				justifyContent={"space-between"}
