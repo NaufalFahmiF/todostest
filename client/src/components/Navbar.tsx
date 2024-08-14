@@ -1,4 +1,4 @@
-import { Box, Flex, Button, useColorModeValue, useColorMode, Text, Container } from "@chakra-ui/react";
+import { Box, Flex, Button, useColorModeValue, useColorMode, Text, Container} from "@chakra-ui/react";
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 import { useState, useEffect } from "react";
@@ -17,26 +17,31 @@ export default function Navbar() {
   return (
     <Container maxW={"900px"}>
       <Box bg={useColorModeValue("gray.400", "gray.700")} px={4} my={4} borderRadius={"5"}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"} >
           {/* LEFT SIDE */}
           <Flex
             justifyContent={"center"}
             alignItems={"center"}
             gap={3}
-            display={{ base: "none", sm: "flex" }}
+            display={{ base: "flex", sm: "flex" }}
           >
-            <Text fontSize={"lg"} fontWeight={500}>
+            <Text 
+            fontSize={{ base: "12px", md: "17px", lg: "20px"}} 
+            fontWeight={500} 
+            bgGradient='linear(to-l, #7a2aCd, #FF0080)' 
+            bgClip='text'
+            >
               Daily Tasks
             </Text>
-            <Text fontSize={"lg"} fontWeight={"bold"}>
+            <Text fontSize={{ base: "12px", md: "17px", lg: "20px"}} fontWeight={"bold"}>
               {currentTime}
             </Text>
           </Flex>
 
           {/* RIGHT SIDE */}
-          <Flex alignItems={"center"} gap={3}>
+          <Flex alignItems={"right"} gap={20} justify={"right"}>
             {/* Toggle Color Mode */}
-            <Button onClick={toggleColorMode}>
+            <Button onClick={toggleColorMode} >
               {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
             </Button>
           </Flex>
