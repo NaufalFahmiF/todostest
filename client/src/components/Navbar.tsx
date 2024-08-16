@@ -26,7 +26,7 @@ export default function Navbar() {
             display={{ base: "flex", sm: "flex" }}
           >
             <Text 
-            fontSize={{ base: "12px", md: "17px", lg: "20px"}} 
+            fontSize={{ base: "15px", md: "20px", lg: "25px"}} 
             fontWeight={500} 
             bgGradient='linear(to-l, #7a2aCd, #FF0080)' 
             bgClip='text'

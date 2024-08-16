@@ -47,6 +47,8 @@ const TodoForm = () => {
 				<Input
 					type='text'
 					value={newTodo}
+					placeholder="Enter a detailed description for the task..."
+					_placeholder={{ color: 'inherit', opacity: 0.5}}
 					onChange={(e) => setNewTodo(e.target.value)}
 					ref={(input) => input && input.focus()}
 				/>
