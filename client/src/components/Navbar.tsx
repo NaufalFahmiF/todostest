@@ -6,10 +6,12 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
+  const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString());
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(new Date().toLocaleTimeString());
+      setCurrentDate(new Date().toLocaleDateString());
     }, 1000); // update every second
     return () => clearInterval(intervalId);
   }, []);
@@ -26,16 +28,21 @@ export default function Navbar() {
             display={{ base: "flex", sm: "flex" }}
           >
             <Text 
-            fontSize={{ base: "15px", md: "20px", lg: "25px"}} 
+            fontSize={{ base: "15px", md: "20px"}} 
             fontWeight={500} 
             bgGradient='linear(to-l, #7a2aCd, #FF0080)' 
             bgClip='text'
             >
               Daily Tasks
             </Text>
-            <Text fontSize={{ base: "12px", md: "17px", lg: "20px"}} fontWeight={"bold"}>
-              {currentTime}
-            </Text>
+            <Flex flexDirection="column" alignItems="flex-start">
+              <Text fontSize={{ base: "12px", md: "17px" }} fontWeight={"bold"}>
+                {currentDate}
+              </Text>
+              <Text fontSize={{ base: "12px", md: "17px"}} fontWeight={"bold"}>
+                {currentTime}
+              </Text>
+            </Flex>
           </Flex>
 
           {/* RIGHT SIDE */}
