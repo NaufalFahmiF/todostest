@@ -1,4 +1,4 @@
-import { Badge, Box, Flex, Spinner, Text } from "@chakra-ui/react";
+import { Badge, Box, Flex, Spinner, Text, useColorModeValue } from "@chakra-ui/react";
 import { FaCheckCircle } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Todo } from "./TodoList";
@@ -56,14 +56,14 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
 			<Flex
 				flex={1}
 				alignItems={"center"}
-				border={"1px"}
+				border={"2px"}
 				borderColor={"gray.1000"}
 				p={2}
 				borderRadius={"lg"}
 				justifyContent={"space-between"}
 			>
 				<Text
-					color={todo.completed ? "green.200" : "yellow.100"}
+					color={todo.completed ? "green.600" : "orange.100"}
 					textDecoration={todo.completed ? "line-through" : "none"}
 				>
 					{todo.body}
@@ -80,11 +80,11 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
 				)}
 			</Flex>
 			<Flex gap={2} alignItems={"center"}>
-				<Box color={"green.500"} cursor={"pointer"} onClick={() => updateTodo()}>
+				<Box color={useColorModeValue("green.600","green.500")} cursor={"pointer"} onClick={() => updateTodo()}>
 					{!isUpdating && <FaCheckCircle size={20} />}
 					{isUpdating && <Spinner size={"sm"} />}
 				</Box>
-				<Box color={"red.500"} cursor={"pointer"} onClick={() => deleteTodo()}>
+				<Box color={useColorModeValue("red.600","red.500")} cursor={"pointer"} onClick={() => deleteTodo()}>
 					{!isDeleting && <MdDelete size={25} />}
 					{isDeleting && <Spinner size={"sm"} />}
 				</Box>

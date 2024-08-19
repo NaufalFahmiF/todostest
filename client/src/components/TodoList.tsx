@@ -37,7 +37,7 @@ const TodoList = () => {
 				textAlign={"center"}
 				my={2}
 				bgGradient={[
-					'linear(to-tr, teal.200, blue.400)',
+					'linear(to-l, #7928CA, teal.500)'
 				  ]}
 				bgClip='text'
 			>
