@@ -2,12 +2,14 @@ import { Box, Flex, Button, useColorModeValue, useColorMode, Text, Container} fr
 import { IoLibrary, IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
   const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString());
+  const navigate = useNavigate();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -29,6 +31,8 @@ export default function Navbar() {
             display={{ base: "flex", sm: "flex" }}
           >
             <Text 
+            as={Link}
+            to="/"
             fontSize={{ base: "15px", md: "20px"}} 
             fontWeight={500} 
             bgGradient='linear(to-l, #7a2aCd, #FF0080)' 
@@ -49,7 +53,7 @@ export default function Navbar() {
           {/* RIGHT SIDE */}
           <Flex alignItems={"right"} gap={5} justify={"right"}>
             {/* Toggle Color Mode */}
-            <Button onClick={toggleColorMode} >
+            <Button onClick={() => navigate("/library")} >
               <IoLibrary />
             </Button>
             <Button onClick={toggleColorMode} >
